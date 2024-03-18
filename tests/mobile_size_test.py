@@ -2,7 +2,7 @@ import pytest
 from selene import browser, be
 
 
-@pytest.fixture(params=[(896, 414)])
+@pytest.fixture(params=[(896, 414)], scope='function')
 def mobile_browser(request):
     browser.config.base_url = 'https://okko.tv'
     [width, height] = request.param

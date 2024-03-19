@@ -6,6 +6,7 @@ import allure
 def test_recommendations_in_shop():
     with allure.step('Open shop page'):
         browser.open('/')
+        browser.element('[aria-label="Consent"]').click()
         browser.element('[test-id="store"]').click()
 
     with allure.step('Check text "recommendations"'):

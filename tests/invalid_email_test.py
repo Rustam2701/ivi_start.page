@@ -6,6 +6,7 @@ import allure
 def test_invalid_email():
     with allure.step('Open form'):
         browser.open('/')
+        browser.element('[aria-label="Consent"]').click()
         browser.element('[test-id=nav_sign]').click()
 
     with allure.step('Type invalid email'):

@@ -17,5 +17,6 @@ def mobile_browser(request):
 def test_mobile_clickable_burger(mobile_browser):
     with allure.step('Burger most be clickable, visible'):
         browser.open('/')
+        browser.element('[aria-label="Consent"]').click()
         browser.element('[test-id=nav_menu]').click()
         browser.element('[test-id=mnav_mainsport]').should(be.visible).press_enter()

@@ -6,6 +6,7 @@ import allure
 def test_catalog_way():
     with allure.step('Open catalog'):
         browser.open('/')
+        browser.element('[aria-label="Consent"]').click()
         browser.element('[test-id=web_main]').click()
 
     with allure.step('Go to series'):

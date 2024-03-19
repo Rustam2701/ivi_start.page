@@ -9,17 +9,6 @@ from dotenv import load_dotenv
 
 from utils import attach
 
-# @pytest.fixture(scope='function', autouse=True)
-# def browser_config():
-#     browser.config.base_url = 'https://okko.tv'
-#     browser.config.window_width = 1280
-#     browser.config.window_height = 720
-#
-#     yield
-#
-#     browser.quit()
-
-
 DEFAULT_BROWSER_VERSION = "100.0"
 
 
@@ -40,6 +29,7 @@ def setup_browser(request):
     browser_version = request.config.getoption('--browser_version')
     browser_version = browser_version if browser_version != "" else DEFAULT_BROWSER_VERSION
     options = Options()
+    browser.config.base_url = 'https://okko.tv'
     browser.config.window_width = 1280
     browser.config.window_height = 720
     selenoid_capabilities = {
@@ -61,7 +51,6 @@ def setup_browser(request):
     )
 
     browser.config.driver = driver
-    browser.config.base_url = 'https://okko.tv'
 
     yield browser
 

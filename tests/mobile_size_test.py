@@ -1,5 +1,6 @@
 import pytest
 from selene import browser, be
+import allure
 
 
 @pytest.fixture(params=[(896, 414)], scope='function')
@@ -12,7 +13,9 @@ def mobile_browser(request):
     browser.quit()
 
 
-def test_mobile_menu(mobile_browser):
-    browser.open('/')
-    browser.element('[test-id=nav_menu]').click()
-    browser.element('[test-id=mnav_mainsport]').should(be.visible).press_enter()
+@allure.title('Check mobile size page')
+def test_mobile_clickable_burger(mobile_browser):
+    with allure.step('Burger most be clickable, visible'):
+        browser.open('/')
+        browser.element('[test-id=nav_menu]').click()
+        browser.element('[test-id=mnav_mainsport]').should(be.visible).press_enter()

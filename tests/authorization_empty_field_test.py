@@ -5,7 +5,7 @@ import allure
 @allure.title("Authorization form")
 def test_empty_field():
     with allure.step('Open form'):
-        browser.element('[aria-label="Consent"]').click()
+        browser.open('/')
         browser.element('[test-id=nav_sign]').click()
 
     with allure.step('Click submit with empty email field'):

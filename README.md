@@ -70,7 +70,7 @@
 
 <!-- Telegram -->
 
-### <img width="3%" title="Telegram" src="images/tg.png"> Интеграция с Telegram
-##### После прохождения тестов, в Telegram bot приходит сообщение с графиком и небольшой информацией о тестах.
+### <img width="3%" title="Telegram" src="images/telega.png"> Интеграция с Telegram
+##### В Telegram bot приходит сообщение с результатами тестирования.
 
-![This is an image](images/tg_bot.png)
+![This is an image](images/telegram.png)

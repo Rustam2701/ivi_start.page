@@ -6,6 +6,7 @@ import allure
 def test_visible_free_watching_button():
     with allure.step('Open catalog films'):
         browser.open('/')
+        browser.element('[aria-label="Consent"]').click()
         browser.element('[data-test="menu_section_films"]').click()
 
     with allure.step('Open page with free subscription'):

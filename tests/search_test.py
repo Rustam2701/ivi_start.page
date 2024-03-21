@@ -6,6 +6,7 @@ import allure
 def test_search_film():
     with allure.step('Open search field'):
         browser.open('/')
+        browser.element('[aria-label="Consent"]').click()
         browser.element('[data-test="header_search"]').click()
 
     with allure.step('Type text "Чебурашка"'):

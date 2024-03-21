@@ -162,6 +162,7 @@ cython_debug/
 #Allure
 allure-results/
 tests/allure-results/
+allure-report
 
 .env/
 

@@ -9,13 +9,13 @@ from dotenv import load_dotenv
 
 from utils import attach
 
-DEFAULT_BROWSER_VERSION = "114.0"
+DEFAULT_BROWSER_VERSION = "120.0"
 
 
 def pytest_addoption(parser):
     parser.addoption(
         '--browser_version',
-        default='114.0'
+        default='120.0'
     )
 
 
@@ -24,12 +24,12 @@ def load_env():
     load_dotenv()
 
 
-@pytest.fixture(scope='function', autouse=True)
+@pytest.fixture(scope='session', autouse=True)
 def setup_browser(request):
     browser_version = request.config.getoption('--browser_version')
     browser_version = browser_version if browser_version != "" else DEFAULT_BROWSER_VERSION
     options = Options()
-    browser.config.base_url = 'https://okko.tv'
+    browser.config.base_url = 'https://www.ivi.ru'
     browser.config.window_width = 1920
     browser.config.window_height = 1080
     selenoid_capabilities = {
@@ -42,10 +42,11 @@ def setup_browser(request):
     }
     options.capabilities.update(selenoid_capabilities)
 
-    url = os.getenv('URL1')
+    login = os.getenv('LOGIN')
+    password = os.getenv('PASSWORD')
 
     driver = webdriver.Remote(
-        command_executor=f"{url}",
+        command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
         options=options
     )
 

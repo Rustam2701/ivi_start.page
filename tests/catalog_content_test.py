@@ -6,9 +6,7 @@ import allure
 def test_catalog_has_cartoons():
     with allure.step('Open catalog "Мультфильмы"'):
         browser.open('/')
-        browser.element('[aria-label="Consent"]').click()
         browser.element('[data-test="menu_section_kids"]').click()
 
     with allure.step('Catalog must have "Мультфильмы смотреть онлайн"'):
         browser.element('[class=headerBar__title]').should(have.text('Мультфильмы смотреть онлайн'))
-

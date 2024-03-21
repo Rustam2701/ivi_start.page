@@ -6,7 +6,6 @@ import allure
 def test_clickable_auth_button():
     with allure.step('Open site'):
         browser.open('/')
-        browser.element('[aria-label="Consent"]').click()
 
     with allure.step('Click Authorization22 button'):
         browser.element('[data-test=header_avatar]').click()

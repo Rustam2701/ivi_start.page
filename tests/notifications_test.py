@@ -6,7 +6,6 @@ import allure
 def test_notifications_text():
     with allure.step('Click notifications button'):
         browser.open('/')
-        browser.element('[aria-label="Consent"]').click()
         browser.element \
             ('[class="nbl-simpleControlButton nbl-simpleControlButton_size_quill nbl-simpleControlButton_style_mali"]') \
             .click()

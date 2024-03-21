@@ -2,7 +2,7 @@ from selene import browser, have
 import allure
 
 
-@allure.title('Visible button of free watching subscription')
+@allure.title('Visible button of free watching subscription in start page')
 def test_visible_free_watching_button():
     with allure.step('Open catalog films'):
         browser.open('/')

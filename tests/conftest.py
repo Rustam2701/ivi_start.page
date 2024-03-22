@@ -42,12 +42,10 @@ def setup_browser(request):
     }
     options.capabilities.update(selenoid_capabilities)
 
-    login = os.getenv('LOGIN')
-    password = os.getenv('PASSWORD')
-    url = os.getenv('URL1')
+    url_selenoid = os.getenv('URL_SELENOID')
 
     driver = webdriver.Remote(
-        command_executor=f"https://{login}:{password}@{url}",
+        command_executor=f"{url_selenoid}/wd/hub",
         options=options
     )
 

@@ -44,7 +44,7 @@ def setup_browser(request):
 
     login = os.getenv('LOGIN')
     password = os.getenv('PASSWORD')
-    url = os.getenv('URL')
+    url = os.getenv('URL1')
 
     driver = webdriver.Remote(
         command_executor=f"https://{login}:{password}@{url}",
